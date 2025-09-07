@@ -1,89 +1,75 @@
-/* charity: water Brand Colors & Fonts
-
-Primary Colors:
-- Yellow:     #FFC907
-- Blue:       #2E9DF7
-
-Secondary Colors:
-- Light Blue: #8BD1CB
-- Green:      #4FCB53
-- Orange:     #FF902A
-- Red:        #F5402C
-- Dark Green: #159A48
-- Pink:       #F16061
-
-Fonts:
-- Proxima Nova
-- Avenir
-
-*/
-
-/* 
-  Charity: Water Landing Page Styles
-  This CSS uses the provided color palette and beginner-friendly styles.
-*/
-
-/* Set up the main font and background color for the whole page */
 body {
   background-color: #003366;
   font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
   margin: 0;
   padding: 0;
   color: #fff;
-}  
-
-
-
-.site-footer {
-  background-color: #003366;
-  color: #fff;
-  text-align: center;
-  padding: 20px 10px;
-  font-size: 14px;
 }
 
-/* Hero Section Styles */
+
+
 .hero {
-  position: relative; /* Needed for overlay */
+  position: relative;
   background-repeat: no-repeat;
-  color: #000;
-  background-color: fff;
-  background: #fff;
+  background-color: #fff;
+  text-align: left;
+  padding: 20px;
 }
 
+.logo {
+  display: block;
+  max-width: 450px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;
+}
 
-/* Add accent color to section headings */
 h2 {
-  color: #2E9DF7; /* Primary blue */
-  margin-top: 0;
+  color: #fff;
+  margin-bottom: 0;
   font-weight: bold;
+  font-size: 50px;
 }
 
-/* Call-to-Action Section Styles */
-.call-to-action {
-  background-color: #003366; /* Primary Yellow */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
+.impact-story {
+  padding: 40px 20px;
 }
 
-/* Style the impact story image */
+.impact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  max-width: 800px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.impact-image-block {
+  flex: 1 1 300px;
+}
+
 .impact-image {
   width: 100%;
   max-width: 320px;
   border-radius: 10px;
-  margin-bottom: -16px;
-}
-.logo{
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  text-align: right;
-  padding-top: 25px;
-  padding-left: 50px;
 }
 
+.impact-text-block {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  background-color: #003366;
+}
+
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
 
 .donate-button {
   position: relative;
@@ -95,7 +81,7 @@ h2 {
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 2.1em;
   margin-top: 18px;
   box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
   transition: background 0.3s, transform 0.2s;
@@ -127,66 +113,48 @@ h2 {
   }
 }
 
-
-
-
-/* 
-  Media Queries for Responsive Design
-  Media queries help make your website look good on different screen sizes,
-  like phones (small screens) and computers (large screens).
-*/
-
-/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
 @media (max-width: 600px) {
-  /* Make hero section padding smaller on small screens */
-  .hero {
-    padding: 32px 8px;
-    font-size: 1em;
+  body{
+  background-image: url('img/cw_treepic.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;;
   }
-
-  /* Make headline font size smaller so it fits on small screens */
-  .hero h1 {
-    font-size: 1.4em;
-  }
-
-  /* Make subheadline font size smaller */
-  .hero p {
-    font-size: 1em;
-  }
-
-  /* Make story and call-to-action sections have less padding */
-  .story,
-  .call-to-action,
-  .donation-section {
-    padding: 14px 8px;
-  }
-
-  /* Make impact story image smaller and stack above the text */
-  .impact-content {
-    display: block; /* Stack items vertically */
-    text-align: center;
-  }
-
-  .impact-image {
-    width: 90%;    /* Make image take up most of the width */
-    max-width: 220px;
-  }
-}
-
-/* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
-@media (min-width: 601px) {
-  /* Show image and text side by side in the impact story */
-  .impact-content {
-    display: block;           /* Place items in a row */
-    align-items: center;     /* Vertically center items */
-    justify-content: center; /* Center the whole group */
-    gap: 28px;               /* Space between image and text */
-    text-align: left;
-    max-width: 800px;
+  
+  .logo {
+    display: block;
     margin: 0 auto;
+    padding-left: 0;
+  }
+  
+  .hero {
+    padding: 6px 8px;
+  }
+
+  .impact-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: -350px;
+  }
+
+  .impact-text-block {
+    align-items: center;
+    flex: 1 1 4px;
+    
   }
 
   .impact-image {
-    width: 300px;
+    max-width: 0px;
+    margin-bottom: -50px;
+  }
+  .donate-button {
+  font-size: 1.5em;
+  }
+
+  .button-wrapper {
+    margin-bottom: -125px;
+    justify-content: center;
   }
 }
