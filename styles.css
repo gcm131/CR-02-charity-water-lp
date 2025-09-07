@@ -25,26 +25,21 @@ Fonts:
 
 /* Set up the main font and background color for the whole page */
 body {
-  background-color: #f4f8fb;
+  background-color: #003366;
   font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #222;
+  color: #fff;
 }  
 
 
 
 .site-footer {
-  background-color: # 003366;
+  background-color: #003366;
   color: #fff;
   text-align: center;
   padding: 20px 10px;
   font-size: 14px;
-}
-
-/* Add a slight shadow and rounded corners to each section for depth */
-section {
-  background: #fff;
 }
 
 /* Hero Section Styles */
@@ -53,31 +48,9 @@ section {
   background-repeat: no-repeat;
   color: #000;
   background-color: fff;
+  background: #fff;
 }
 
-/* Make the headline bold and modern */
-.hero h1 {
-  font-size: 2.5em;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
-}
-
-/* Style the subheadline */
-.hero p {
-  font-size: 1.2em;
-  margin-top: 0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
-}
-
-/* Story Section Styles */
-.story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
 
 /* Add accent color to section headings */
 h2 {
@@ -99,7 +72,7 @@ h2 {
   width: 100%;
   max-width: 320px;
   border-radius: 10px;
-  margin-bottom: 16px;
+  margin-bottom: -16px;
 }
 .logo{
   width: 100%;
@@ -112,8 +85,9 @@ h2 {
 }
 
 
-/* Donate Button Styles */
 .donate-button {
+  position: relative;
+  overflow: hidden;
   display: inline-block;
   background-color: #FFC907;
   color: #000;
@@ -129,11 +103,30 @@ h2 {
   cursor: pointer;
 }
 
-/* Change button color when hovered */
-.donate-button:hover {
-  background-color: #159A48; /* Dark Green */
-  transform: translateY(-2px) scale(1.04); /* Slight lift */
+.donate-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+  transform: skewX(-20deg);
 }
+
+.donate-button:hover::before {
+  animation: shine 0.8s ease-in-out;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
 
 
 
@@ -184,7 +177,7 @@ h2 {
 @media (min-width: 601px) {
   /* Show image and text side by side in the impact story */
   .impact-content {
-    display: flex;           /* Place items in a row */
+    display: block;           /* Place items in a row */
     align-items: center;     /* Vertically center items */
     justify-content: center; /* Center the whole group */
     gap: 28px;               /* Space between image and text */
